@@ -39,3 +39,7 @@ h1 {
     border-color: rgb(85, 62, 45);
     font-weight: bold;
 }
+
+footer {
+    margin-bottom: 50px;
+}
