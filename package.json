@@ -1,0 +1,27 @@
+{
+  "name": "conspicuous-cupcakes",
+  "version": "1.0.0",
+  "description": "Allows user to Eat and Add cupcakes to the app. The app will log cupcakes that have been eaten or added.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/T-Yin/conspicuous-cupcakes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/T-Yin/conspicuous-cupcakes/issues"
+  },
+  "homepage": "https://github.com/T-Yin/conspicuous-cupcakes#readme"
+}

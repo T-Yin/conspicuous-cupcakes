@@ -1,0 +1,65 @@
+<img class="cupcakes" src="assets/images/cupcakes.png" alt="Cupcakes">
+
+<h1 class="text-center">Conspicuous Cupcakes</h1>
+<br>
+<div class="row">
+  <div class="col">
+
+    <div class="card cd-1">
+      <h4 class="text-center card-header">Devour The Delicious Cupcakes!</h2>
+        <div class="card-body">
+
+          <ul class="text-left">
+            {{#each cupcakes}}
+            {{#unless devoured}}
+            <li>
+              {{name}}
+              <button class="devour m-1 btn btn-outline-secondary p-1 pl-2 pr-2" data-id="{{id}}"> <i class="fas fa-utensils"></i></button>
+            </li>
+            {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card cd-1">
+      <h4 class="text-center card-header">Cupcakes Partying in Your Tummy:</h2>
+        <div class="card-body">
+
+          <ul class="text-left">
+            {{#each cupcakes}}
+            {{#if devoured}}
+            <li>
+              {{name}}
+            </li>
+            {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<div class="row">
+  <div class="col">
+
+<div class="card cd-2">
+    <h4 class="text-center card-header">Add a Cupcake Flavor!</h2>
+    <div class="text-center card-body">
+      <form class="create-form">
+
+        <div class="form-group">
+          <label for="ca"></label>
+          <input type="text" id="ca" name="name">
+        </div>
+
+        <button type="submit" class="btn">Add</button>
+      </form>
+    </div>
+    </div>
+
+  </div>
+</div>
