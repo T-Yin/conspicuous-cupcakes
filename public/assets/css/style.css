@@ -17,8 +17,7 @@ input {
 }
 
 body {
-    background-color: rgb(245, 219, 197);
-    background-size: 50%;
+    background: url("../images/food.jpg");
     color: rgb(85, 62, 45);
 }
 
