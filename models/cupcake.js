@@ -22,7 +22,7 @@ var cupcake = {
     orm.delete("cupcakes", condition, function(res) {
       cb(res);
     })
-  }
+  },
 };
 
 // Export the database functions for the controller (cupcakesController.js).
