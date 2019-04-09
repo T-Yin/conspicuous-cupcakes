@@ -24,6 +24,30 @@ $(function () {
     );
   });
 
+  $(".delete").on("click", function (event) {
+
+    console.log("Clicked Delete");
+
+    var id = $(this).data("id");
+    // var newDevour = $(this).data("newdevour");
+
+    var newState = {
+      deleted: true
+    };
+
+    // Send the PUT request.
+    $.ajax("/api/cupcakes/" + id, {
+      type: "PUT",
+      data: newState
+    }).then(
+      function () {
+        console.log("Changed to", newState);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
   $(".create-form").on("submit", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();

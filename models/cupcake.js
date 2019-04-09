@@ -18,6 +18,11 @@ var cupcake = {
       cb(res);
     });
   },
+  delete: function(condition, cb) {
+    orm.destroy("cupcakes", condition, function(res) {
+      cb(res);
+    })
+  }
 };
 
 // Export the database functions for the controller (cupcakesController.js).
