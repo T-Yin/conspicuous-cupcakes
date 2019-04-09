@@ -31,18 +31,18 @@ $(function () {
     var id = $(this).data("id");
     // var newDevour = $(this).data("newdevour");
 
-    var newState = {
-      deleted: true
-    };
+    // var newState = {
+    //   deleted: true
+    // };
 
     // Send the PUT request.
     $.ajax("/api/cupcakes/" + id, {
-      type: "PUT",
+      type: "DELETE",
       data: newState
     }).then(
       function () {
-        console.log("Changed to", newState);
-        // Reload the page to get the updated list
+        // console.log("Changed to", newState);
+        // // Reload the page to get the updated list
         location.reload();
       }
     );

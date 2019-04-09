@@ -19,7 +19,7 @@ var cupcake = {
     });
   },
   delete: function(condition, cb) {
-    orm.destroy("cupcakes", condition, function(res) {
+    orm.delete("cupcakes", condition, function(res) {
       cb(res);
     })
   }
