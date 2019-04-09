@@ -38,7 +38,7 @@ $(function () {
     // Send the PUT request.
     $.ajax("/api/cupcakes/" + id, {
       type: "DELETE",
-      data: newState
+      // data: newState
     }).then(
       function () {
         // console.log("Changed to", newState);
