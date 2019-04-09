@@ -50,7 +50,7 @@ router.delete("/api/cupcakes/:id", function(req, res) {
   console.log("condition", condition);
 
   cupcake.delete({
-    devoured: req.body.devoured
+    // devoured: req.body.devoured
   }, condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
