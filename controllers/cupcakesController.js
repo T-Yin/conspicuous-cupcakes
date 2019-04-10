@@ -1,5 +1,4 @@
 var express = require("express");
-
 var router = express.Router();
 
 // Import the model (cupcake.js) to use its database functions.
@@ -17,11 +16,7 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/cupcakes", function(req, res) {
-  cupcake.create([
-    "name"
-  ], [
-    req.body.name
-  ], function(result) {
+  cupcake.create(["name"], [req.body.name], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
   });
@@ -32,26 +27,28 @@ router.put("/api/cupcakes/:id", function(req, res) {
 
   console.log("condition", condition);
 
-  cupcake.update({
-    devoured: req.body.devoured
-  }, condition, function(result) {
-    if (result.changedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
+  cupcake.update(
+    {
+      devoured: req.body.devoured
+    },
+    condition,
+    function(result) {
+      if (result.changedRows == 0) {
+        // If no rows were changed, then the ID must not exist, so 404
+        return res.status(404).end();
+      } else {
+        res.status(200).end();
+      }
     }
-  });
+  );
 });
 
 router.delete("/api/cupcakes/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
+  var condition = "id = " + req.params.id + ";";
 
   console.log("condition", condition);
 
-  cupcake.delete({
-    // devoured: req.body.devoured
-  }, condition, function(result) {
+  cupcake.delete(condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();

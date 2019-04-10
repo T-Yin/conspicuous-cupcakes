@@ -93,6 +93,7 @@ var orm = {
     queryString += " WHERE ";
     queryString += condition;
 
+    console.log(queryString);
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
@@ -101,6 +102,7 @@ var orm = {
       cb(result);
     });
   }
+
 };
 
 // Export the orm object for the model (cat.js).

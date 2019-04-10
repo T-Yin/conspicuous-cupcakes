@@ -27,7 +27,6 @@ $(function () {
   $(".delete").on("click", function (event) {
 
     console.log("Clicked Delete");
-
     var id = $(this).data("id");
     // var newDevour = $(this).data("newdevour");
 
@@ -41,7 +40,7 @@ $(function () {
       // data: newState
     }).then(
       function () {
-        // console.log("Changed to", newState);
+        console.log("HIT");
         // // Reload the page to get the updated list
         location.reload();
       }
