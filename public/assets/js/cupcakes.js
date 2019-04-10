@@ -31,13 +31,9 @@ $(function () {
 
     // Send the PUT request.
     $.ajax("/api/cupcakes/" + id, {
-      type: "DELETE"
+      type: "DELETE" 
     }).then(
-      function () {
-        console.log("deleted" + id);
-        // // Reload the page to get the updated list
-        location.reload();
-      }
+      window.location.reload()
     );
   });
 

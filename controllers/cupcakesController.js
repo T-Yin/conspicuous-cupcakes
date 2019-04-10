@@ -15,6 +15,13 @@ router.get("/", function(req, res) {
   });
 });
 
+router.get("/api/cupcakes/:id", function(req, res) {
+  var condition = "id = " + req.params.id + ";";
+  cupcake.find(condition, function(result) {
+    res.json(result);
+  })
+});
+
 router.post("/api/cupcakes", function(req, res) {
   cupcake.create(["name"], [req.body.name], function(result) {
     // Send back the ID of the new quote
@@ -46,14 +53,19 @@ router.put("/api/cupcakes/:id", function(req, res) {
 router.delete("/api/cupcakes/:id", function(req, res) {
   var condition = "id = " + req.params.id + ";";
 
-  console.log("condition", condition);
+  console.log("condition from controller", condition);
 
   cupcake.delete(condition, function(result) {
+    console.log("controller:")
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
+    } else if (err) {
+      return res.status(500).end();;
     } else {
+      console.log("con 1");
       res.status(200).end();
+      console.log("con 2");
     }
   });
 });

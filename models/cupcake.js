@@ -7,6 +7,11 @@ var cupcake = {
       cb(res);
     });
   },
+  find: function(condition, cb) {
+    orm.find("cupcakes", condition, function(res) {
+      cb(res);
+    })
+  },
   // The variables cols and vals are arrays.
   create: function(cols, vals, cb) {
     orm.create("cupcakes", cols, vals, function(res) {
