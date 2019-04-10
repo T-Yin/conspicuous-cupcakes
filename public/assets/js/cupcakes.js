@@ -28,19 +28,13 @@ $(function () {
 
     console.log("Clicked Delete");
     var id = $(this).data("id");
-    // var newDevour = $(this).data("newdevour");
-
-    // var newState = {
-    //   deleted: true
-    // };
 
     // Send the PUT request.
     $.ajax("/api/cupcakes/" + id, {
-      type: "DELETE",
-      // data: newState
+      type: "DELETE"
     }).then(
       function () {
-        console.log("HIT");
+        console.log("deleted" + id);
         // // Reload the page to get the updated list
         location.reload();
       }
